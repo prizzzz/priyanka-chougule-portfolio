@@ -1,0 +1,224 @@
+/* --- contact.css (Unique Diagonal Layout) --- */
+
+/* ==================================== */
+/* 0. Section & Header Styling */
+/* ==================================== */
+.contact {
+    padding: 100px 0; /* More padding for impact */
+    background: #0d0f12; /* Base rich dark background */
+    overflow: hidden; 
+}
+
+.contact-content-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 3rem; 
+    font-weight: 800;
+    color: #ffffff;
+    text-align: left; /* Aligns left for unique look */
+    margin-left: 20px;
+    margin-bottom: 70px; /* Big gap to the content */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ==================================== */
+/* 1. Unique Diagonal Container */
+/* ==================================== */
+
+.unique-contact-container {
+    display: flex;
+    position: relative;
+    max-width: 1300px;
+    margin: 0 auto;
+    min-height: 550px; 
+    background: #15181e; /* Dark background for the main area */
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* 🚀 KEY UNIQUE FEATURE: Diagonal Split */
+.unique-contact-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%; /* Controls where the split happens */
+    height: 100%;
+    background: #0f1013; /* A slightly different, darker background for contrast */
+    transform: skewX(-10deg); /* Diagonal slant */
+    transform-origin: top left;
+    z-index: 1;
+}
+
+
+/* ==================================== */
+/* 2. Contact Info (Floating Card) */
+/* ==================================== */
+
+.contact-info-card {
+    position: relative; /* To be above the diagonal background */
+    z-index: 2;
+    width: 40%; 
+    padding: 50px 30px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.info-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #7a5af5; /* Accent color for the title */
+    margin-bottom: 10px;
+}
+
+.info-text {
+    color: #9c9c9c;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.contact-details {
+    /* Contains the Mail/LinkedIn/GitHub list */
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #d0d0d0;
+    font-size: 0.95rem;
+}
+
+.detail-icon {
+    color: #7a5af5; 
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.detail-item a {
+    color: #d0d0d0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.detail-item a:hover {
+    color: #ffffff;
+}
+
+
+/* ==================================== */
+/* 3. Contact Form (The Dominant Side) */
+/* ==================================== */
+
+.unique-contact-form {
+    position: relative;
+    z-index: 3; /* Ensure form is above the diagonal background */
+    width: 60%; 
+    padding: 50px 50px 50px 80px; /* Extra left padding to cross the diagonal */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-prompt {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #b0b0b0;
+    margin-bottom: 10px;
+}
+
+.unique-contact-form input,
+.unique-contact-form textarea {
+    padding: 18px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #1e2128; /* Slightly lighter input background for contrast */
+    color: #ffffff;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Placeholder Styling */
+.unique-contact-form input::placeholder,
+.unique-contact-form textarea::placeholder {
+    color: #888;
+}
+
+.unique-contact-form input:focus,
+.unique-contact-form textarea:focus {
+    outline: none;
+    border-color: #7a5af5;
+    box-shadow: 0 0 10px rgba(122, 90, 245, 0.5);
+    background: #1e2128; 
+}
+
+.unique-contact-form textarea {
+    resize: vertical;
+    min-height: 180px;
+}
+
+/* Submit Button Styling */
+.btn-send {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 15px 25px;
+    background: #7a5af5;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    margin-top: 10px;
+}
+
+.btn-send:hover {
+    background: #6a49e0; 
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(122, 90, 245, 0.4);
+}
+
+.btn-icon {
+    /* Style for the MessageSquare icon */
+}
+
+
+/* ==================================== */
+/* 4. Mobile Responsiveness */
+/* ==================================== */
+@media (max-width: 992px) {
+    .unique-contact-container {
+        flex-direction: column;
+        min-height: auto;
+        border-radius: 10px;
+    }
+
+    .unique-contact-container::before {
+        display: none; /* Remove diagonal on mobile */
+    }
+
+    .contact-info-card,
+    .unique-contact-form {
+        width: 100%; /* Full width stack */
+        padding: 30px; /* Uniform padding */
+    }
+    
+    .unique-contact-form {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .section-title {
+        text-align: center;
+        margin-left: 0;
+    }
+}

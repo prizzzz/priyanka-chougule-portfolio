@@ -1,0 +1,60 @@
+/* src/styles/global.css */
+
+/* ==================================== */
+/* 0. Fonts (Keep) */
+/* ==================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+
+/* ==================================== */
+/* 1. Reset & Base (Keep) */
+/* ==================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  /* Base dark background color */
+  background-color: #0d0f12; 
+  color: #c8c8c8; 
+  line-height: 1.7;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  
+  /* 🚀 NEW: Aesthetic Starfield Texture Background */
+  background-image: 
+    /* Layer 1: Tiny, subtle white particles (the stars) */
+    radial-gradient(circle at 100px 100px, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(circle at 50px 50px, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    
+  /* Set the size and repeat */
+  background-size: 80px 80px, 120px 120px; 
+  background-attachment: fixed; /* Ensures stars don't scroll with content */
+}
+
+/* ==================================== */
+/* 2. Typography */
+/* ==================================== */
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+}
+
+/* ==================================== */
+/* 3. Section Structure */
+/* ==================================== */
+section {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 80px 15px;
+  }
+}
+

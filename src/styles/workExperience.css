@@ -1,0 +1,146 @@
+/* --- workExperience.css (FINAL MINIMALIST STACKED LAYOUT) --- */
+
+/* ==================================== */
+/* 0. Section Base & Container */
+/* ==================================== */
+.work-experience {
+    padding: 100px 0;
+    /* Seamless blend with global background */
+    background: #0e111a; 
+    color: #ffffff;
+}
+
+.work-content-wrapper {
+    max-width: 800px; /* Optimal width for single column readability */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Category Title (e.g., Internships) */
+.section-title-work {
+    font-size: 2rem; 
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* Clean, defined separator */
+    border-bottom: 3px solid #7a5af5; 
+    padding-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+.title-icon {
+    color: #7a5af5;
+}
+
+/* ==================================== */
+/* 1. Job Card Stack */
+/* ==================================== */
+
+.timeline-item {
+    margin-bottom: 30px;
+}
+
+/* The Job Card */
+.job-card {
+    background: #15181e; /* Subtle contrast color */
+    border-radius: 12px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Aesthetic Hover Effect: Clean border highlight only */
+.job-card:hover {
+    border-color: #7a5af5;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* ==================================== */
+/* 2. Job Header Typography */
+/* ==================================== */
+
+.job-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.job-company {
+    font-size: 1rem;
+    color: #a0a0a0;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.job-duration {
+    font-size: 0.9rem;
+    color: #7a5af5; 
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    display: block;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+/* ==================================== */
+/* 3. Job Details List */
+/* ==================================== */
+
+.job-details-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.job-detail-bullet {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #c8c8c8;
+}
+
+/* Custom Bullet: Aesthetic Arrow */
+.job-detail-bullet::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #7a5af5; 
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* ==================================== */
+/* 4. Responsive Adjustments */
+/* ==================================== */
+@media (max-width: 600px) {
+    .main-section-title {
+        font-size: 2.5rem;
+    }
+    .section-title-work {
+        font-size: 1.8rem;
+    }
+    .job-card {
+        padding: 20px;
+    }
+    .job-title {
+        font-size: 1.1rem;
+    }
+}

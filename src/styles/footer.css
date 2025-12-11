@@ -1,0 +1,85 @@
+/* --- footer.css (Pure Typography Bar) --- */
+
+/* ==================================== */
+/* 0. Footer Base */
+/* ==================================== */
+.footer-typo-bar {
+    background: #0d0f12;
+    /* A very thin, subtle line is the only major visual cue */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); 
+    padding: 25px 0; /* Minimal vertical space for simplicity */
+}
+
+.footer-content-typo {
+    /* KEY: Distribute the three elements evenly across the bar */
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px; 
+}
+
+/* ==================================== */
+/* 1. Typography Styles (Simple and Aesthetic) */
+/* ==================================== */
+
+/* Left: Name/Signature */
+.footer-typo-name {
+    font-size: 1rem; 
+    font-weight: 500; /* Sophisticated, mid-range weight */
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    text-transform: uppercase; /* Elegant touch */
+}
+
+/* Center: Social Icons */
+.footer-typo-icons {
+    display: flex;
+    gap: 25px; /* Larger gap for airiness */
+}
+
+.footer-typo-icons a {
+    color: #a0a0a0;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.footer-typo-icons a:hover {
+    color: #7a5af5;
+    transform: translateY(-2px);
+}
+
+/* Right: Copyright */
+.footer-typo-copyright {
+    font-size: 0.85rem;
+    color: #888888; 
+    margin: 0;
+    letter-spacing: 0.5px;
+    font-weight: 300; /* Thin weight for high-end look */
+}
+
+/* ==================================== */
+/* 2. Responsiveness */
+/* ==================================== */
+@media (max-width: 768px) {
+    .footer-typo-bar {
+        padding: 20px 0;
+    }
+    .footer-content-typo {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .footer-typo-name {
+        order: 1; 
+    }
+    
+    .footer-typo-icons {
+        order: 2; 
+    }
+    
+    .footer-typo-copyright {
+        order: 3; 
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,199 @@
+/* --- projects.css --- */
+
+/* ==================================== */
+/* 0. Section Title (Basic Styling for Context) */
+/* ==================================== */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 40px;
+    text-align: center !important;
+}
+
+
+/* ==================================== */
+/* 1. Wrapper Grid & Responsiveness */
+/* ==================================== */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px; 
+}
+
+/* Tablet Layout */
+@media (max-width: 1200px) { 
+    .projects-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+    } 
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) { 
+    .projects-grid { 
+        grid-template-columns: 1fr; 
+    } 
+}
+
+
+/* ==================================== */
+/* 2. Project Card Base Style */
+/* ==================================== */
+
+/* --- projects.css (FINAL STABLE PROJECT CARD AESTHETIC) --- */
+
+.project-card {
+    /* Background & Border */
+    background: #0f1013; /* Deep, subtle background */
+    border: 1px solid rgba(255, 255, 255, 0.08); /* Ultra-thin, light border */
+    border-radius: 10px; 
+    
+    /* Spacing & Shadow */
+    padding: 35px; 
+    box-shadow: 
+        /* Inner shadow (constant) */
+        inset 0 0 5px rgba(255, 255, 255, 0.03), 
+        /* Outer shadow: Defined parameters for stability (5px offset, 20px blur) */
+        0 5px 20px rgba(0, 0, 0, 0.5); 
+    
+    /* Animation */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.project-card:hover {
+    /* Hover Effects - GUARANTEED STABILITY */
+    border-color: #7a5af5; /* Primary color border */
+    box-shadow: 
+        /* Inner shadow: Modified color, keeping radius and offset */
+        inset 0 0 8px rgba(122, 90, 245, 0.15), 
+        /* 🚀 CRITICAL FIX: Match the outer shadow parameters exactly! */
+        0 5px 20px rgba(122, 90, 245, 0.5); /* Same 5px offset, same 20px blur, NEW PURPLE color */
+        
+    /* Transform explicitly cancelled (Good practice) */
+    transform: none !important; 
+}
+
+
+/* ==================================== */
+/* 3. Title & Links (Top Row) */
+/* ==================================== */
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; 
+  margin-bottom: 20px;
+}
+
+/* Project Title */
+.project-title {
+    color: white;
+    font-size: 1.4rem; /* Smaller for better balance */
+    font-weight: 700;
+    line-height: 1.25; 
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    max-width: 80%; 
+}
+
+/* Project Links (Icons) */
+.project-links {
+    flex-shrink: 0;
+    padding-top: 2px; /* Positions icons high on the card */
+}
+
+.project-links a {
+    color: #a0a0a0; 
+    margin-left: 10px; /* Tighter spacing */
+    transition: color 0.3s;
+}
+
+.project-links a:hover {
+    color: #7a5af5;
+}
+
+/* Explicitly target the Lucide icons (SVGs) to control size */
+.project-links a svg {
+    width: 18px; 
+    height: 18px; 
+}
+
+
+/* ==================================== */
+/* 4. Description & Bullet Points */
+/* ==================================== */
+
+.project-description {
+    margin: 0 0 25px 0; 
+    color: #b0b0b0; 
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Bullet Points List */
+.bullet-points {
+    color: #d0d0d0;
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 25px; 
+}
+
+.bullet-points li {
+    margin-bottom: 10px; 
+    display: flex;
+    align-items: flex-start;
+    font-size: 0.95rem;
+}
+
+.bullet-points li::before {
+    content: "◇"; /* Elegant Diamond Symbol */
+    color: #7a5af5; 
+    font-weight: bold;
+    margin-right: 12px;
+    font-size: 1.1em;
+    line-height: 1.4;
+    transform: scale(0.8); 
+}
+
+
+/* ==================================== */
+/* 5. Tech Tags & Animation */
+/* ==================================== */
+
+.tech-tags {
+    margin-top: 15px; 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    
+    /* Separator line for hierarchy */
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.tech-tags span {
+    background: transparent;
+    border: 1px solid rgba(122, 90, 245, 0.4); 
+    padding: 4px 10px; 
+    border-radius: 5px; 
+    font-size: 0.7rem; 
+    color: #bca7ff;
+    font-weight: 500;
+    text-transform: capitalize;
+    
+    /* Animation Transition */
+    transition: all 0.2s ease-in-out; 
+}
+
+/* Hover effect on ALL tags when the MAIN CARD is hovered */
+.project-card:hover .tech-tags span {
+    color: #ffffff; 
+    background: rgba(122, 90, 245, 0.25);
+}
+
+/* Additional effect for individual tag hover */
+.tech-tags span:hover {
+    box-shadow: 0 0 10px rgba(122, 90, 245, 0.5); 
+    z-index: 1; /* Ensures individual glow stays on top */
+}
