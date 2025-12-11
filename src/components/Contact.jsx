@@ -17,7 +17,7 @@ const Contact = () => {
     e.preventDefault();
     
     // 🎯 CRITICAL: REPLACE 'YOUR_FORMSPREE_ENDPOINT' with your actual Formspree URL 
-    fetch('YOUR_FORMSPREE_ENDPOINT', { 
+    fetch('https://formspree.io/f/mblnpzpd', { 
       method: 'POST',
       headers: { 
           'Content-Type': 'application/json',
